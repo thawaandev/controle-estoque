@@ -23,6 +23,9 @@ public class Estoque {
 	public void apagarProdutos(String nome) {
 		if(!produto.containsKey(nome)) {
 			System.out.println("Produto não encontrado.");
+		} else {
+			this.produto.remove(nome);
+			System.out.println("Produto: " + nome + " excluido com sucesso!");
 		}
 	}
 	
