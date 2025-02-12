@@ -14,7 +14,7 @@ public class Main {
 			System.out.println("2. Apagar Produto");
 			System.out.println("3. Alterar Preço");
 			System.out.println("4. Alterar Estoque");
-			System.out.println("5. Procurar Mercadoria");
+			System.out.println("5. Ver Estoque");
 			System.out.println("6. Sair");
 			int opcao = teclado.nextInt();
 			teclado.nextLine();
@@ -28,6 +28,25 @@ public class Main {
 				estoque.cadProdutos(nomeProduto, precoProduto);
 				System.out.println("Produto cadastrado com sucesso...");
 				System.out.println("Produto: " + nomeProduto + "\nPreço: " + precoProduto);
+				break;
+			case 2:
+				System.out.println("Digite o nome do produto: ");
+				String nProduto = teclado.nextLine();
+				estoque.apagarProdutos(nProduto);
+				break;
+			case 3:
+				System.out.println("Digite o nome do produto: ");
+				String noProduto = teclado.nextLine();
+				System.out.println("Digite o preço atualizado: ");
+				int precoAt = teclado.nextInt();
+				estoque.altPreco(noProduto, precoAt);
+				break;
+			case 4:
+				System.out.println("Digite o nome do produto: ");
+				String nomeProdu = teclado.nextLine();
+				System.out.println("Digite a quantidade de estoque: ");
+				int qtdEstoque = teclado.nextInt();
+				estoque.altQuantidade(nomeProdu, qtdEstoque);
 				break;
 			case 5:
 				estoque.consultarProdutos();

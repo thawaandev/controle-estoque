@@ -1,5 +1,6 @@
 package me.thawan.controle;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -38,6 +39,17 @@ public class Estoque {
 		}
 	}
 	
+	public void altQuantidade(String nome, int qtd) {
+		if(!produto.containsKey(nome)) {
+			System.out.println("Produto não encontrado");
+		} else {
+			if(qtd > 0) {
+				quantidade += qtd;
+				System.out.println("Estoque Alterado\nProduto: " + nome +"\nEstoque: " + qtd);
+			}
+		}
+	}
+	
 	
 	
 	
@@ -47,7 +59,9 @@ public class Estoque {
 		} else {
 			Set<Entry<String, Integer>> c1 = produto.entrySet();
 			for(Entry<String, Integer> n1 : c1) {
-				System.out.println(n1);
+				System.out.println("Produto: " + produto.keySet());
+				System.out.println("Preço: " + produto.values());
+				System.out.println("Quantidade: " + quantidade);
 			}
 		}
 	}
